@@ -16,7 +16,7 @@ with open("stock_codes.txt", "r") as f:
 
 # 날짜 파일에다 저장
 data = {}  # 나중에 저장할 딕션어리 json (format)
-with open(f"{today}.json", "w") as f:
+with open(f"data/{today}.json", "w") as f:
     for s in stock_code:
         url = BASE_URL + s
         response = requests.get(url)
@@ -27,4 +27,4 @@ with open(f"{today}.json", "w") as f:
             except:
                 continue
 
-    f.write(json.dumps(data, indent=4))
+    f.write(json.dumps(data, indent=6))

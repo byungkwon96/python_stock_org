@@ -1,6 +1,8 @@
 import json
+import heapq
 
 with open("stocks_by_sectors.json") as f:
     companies_names_sectors = json.load(f)  # get stocks_by sectors
 
-print(companies_names_sectors["001120"])
+with open("./data/2022_Aug_8.json") as f:
+    companies_info = json.load(f)
