@@ -18,7 +18,7 @@ def stock_org(l):
 
 # read file and organize in dictionary format
 dic = {}
-with open("test.txt", "r") as f:
+with open("unorg_stock_data.txt", "r") as f:
     for ls in f.readlines():
         l = ls.split()
         if len(l) > 2:
@@ -26,5 +26,5 @@ with open("test.txt", "r") as f:
             dic[name] = temp
 
 # write in file
-with open("stocks_by_sectors.txt", "w") as f:
+with open("stocks_by_sectors.json", "w") as f:
     f.write(json.dumps(dic, ensure_ascii=False, indent=6))
